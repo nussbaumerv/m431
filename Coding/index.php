@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,6 +62,7 @@
 
     </style>
     <script>
+        var amount = 69;
 
         function change_text() {
             document.getElementById("submit").value = "LOADING...";
