@@ -4,7 +4,7 @@ include("connect.php");
 $amount = $_GET['amount'];
 
 $sql = "SELECT COUNT(`id`) AS total_messages
-        FROM `messages` WHERE";
+        FROM `messages`";
 $result = mysqli_fetch_assoc(mysqli_query($connect, $sql));
 $total_entries = $result["total_messages"];
 
