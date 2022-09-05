@@ -62,7 +62,8 @@
 
     </style>
     <script>
-        const room = urlParams.get('room')
+        var room = urlParams.get('room')
+        alert(room);
         var amount = 69;
 
         function change_text() {
