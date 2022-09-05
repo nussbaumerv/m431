@@ -10,7 +10,7 @@ $total_entries = $result["total_messages"];
 if($amount != $total_entries){
     $limit = $total_entries - $_SESSION["total"];
 
-    $sql = "SELECT * FROM `messages` ORDER BY `id` WHERE room_id = 2 DESC";
+    $sql = "SELECT * FROM `messages` ORDER BY `id` DESC WHERE room_id = 2";
     $result = mysqli_query($connect, $sql);
     if(mysqli_num_rows($result)>0){
         $counter = 0;
