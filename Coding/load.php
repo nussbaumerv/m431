@@ -2,7 +2,7 @@
 include("connect.php");
 
 $amount = $_GET['amount'];
-$room = $_GET['room'];
+$room = 1;
 
 $sql = "SELECT COUNT(`id`) AS total_messages
         FROM `messages` WHERE room_id = '$room'";
