@@ -62,6 +62,7 @@
 
     </style>
     <script>
+        const room = urlParams.get('room')
         var amount = 69;
 
         function change_text() {
@@ -71,7 +72,7 @@
         function fetch() {
             var loading = 10;
             $.ajax({
-                url: 'load.php?amount='+amount,
+                url: 'load.php?room='+room+'amount='+amount,
                 success: function(data) {
                     $("#list").prepend(data);
                     var amount = $("#list p").length;
