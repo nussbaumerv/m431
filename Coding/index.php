@@ -65,7 +65,7 @@ include("menu.html");
 
     </style>
     <script>
-        const room = urlParams.get('room')
+        const room = urlParams.get('room');
 
         function change_text() {
             document.getElementById("submit").value = "LOADING...";
