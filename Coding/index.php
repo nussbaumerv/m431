@@ -1,3 +1,6 @@
+<?php
+include("menu.html");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -62,7 +65,7 @@
 
     </style>
     <script>
-        var amount = 69;
+        const room = urlParams.get('room')
 
         function change_text() {
             document.getElementById("submit").value = "LOADING...";
@@ -71,7 +74,7 @@
         function fetch() {
             var loading = 10;
             $.ajax({
-                url: 'load.php?amount='+amount,
+                url: 'load.php?room='+room+'&amount='+amount,
                 success: function(data) {
                     $("#list").prepend(data);
                     var amount = $("#list p").length;

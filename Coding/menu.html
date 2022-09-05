@@ -61,7 +61,7 @@
             text-align: left;
             float: left;
             transition: color .2s;
-            display:none;
+            display: block;
             position: fixed;
             font-size: 40px;
             transition: font-size .2s;
@@ -74,32 +74,6 @@
             font-size: 41px;
             transition: font-size .2s;
         }
-
-        .top {
-            width: 96vw;
-            background-color: red;
-            padding: 15px 2vw;
-            overflow: hidden;
-            z-index: 10;
-            transition: background-color 0.3s;
-            box-shadow: 1.5px 2px 10px #a6a6a6;
-        }
-
-        .top a {
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-
-        .top:hover {
-            background-color: #bd0909;
-            transition: background-color 0.3s;
-        }
-
-        .top a:hover {
-            color: white;
-            transition: color 0.3s;
-        }
     </style>
     <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/83828188?v=4"
         type="img/vnd.microsoft.icon" />
@@ -111,36 +85,21 @@
 <body>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <a class="ht"
-            style="padding:20px;" href="index.php">HOME</a><a class="ht"
-            style="padding:20px;" href="log.php">ZUGRIFFSPROTOKOLL</a> <a class="ht"
-            style="padding:20px;" href="settings.php">EINSTELLUNGEN</a> <a class="ht"
-            style="padding:20px;" href="logout.php">LOGOUT</a>
+            style="padding:20px;" href="index.php">HOME</a><a class="ht" style="padding:20px;"
+            href="log.php">ZUGRIFFSPROTOKOLL</a> <a class="ht" style="padding:20px;"
+            href="settings.php">EINSTELLUNGEN</a> <a class="ht" style="padding:20px;" href="logout.php">LOGOUT</a>
     </div>
 
     <div id="zo" class="zo">
         <span class="navib" ondblclick="rb()" onclick="openNav()"> &#9776; </span>
     </div>
-    <div id="top" class="top">
-        <a class="ht" style="padding:20px;" href="index.php">HOME</a><a class="ht"
-        style="padding:20px;" href="log.php">ZUGRIFFSPROTOKOLL</a> <a class="ht"
-        style="padding:20px;" href="settings.php">EINSTELLUNGEN</a> <a class="ht"
-        style="padding:20px;" href="logout.php">LOGOUT</a>
-</div>
-    </div>
-
 </body>
 
 </html>
 <script>
-    if (window.innerWidth < 630) {
-        document.getElementById("top").style.display = "none";
-        document.getElementById("zo").style.display = "block";
-
-
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "100vw";
-            document.getElementById("mySidenav").style.textAlign = "center";
-        }
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100vw";
+        document.getElementById("mySidenav").style.textAlign = "center";
     }
 
     function closeNav() {
