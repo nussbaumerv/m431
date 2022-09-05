@@ -9,7 +9,7 @@
     <title>Document</title>
     <style>
         body{
-            text-align:left;
+            text-align:center;
             font-family:arial;
         }
         #container{
