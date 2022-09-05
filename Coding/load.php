@@ -4,7 +4,7 @@ include("connect.php");
 $amount = $_GET['amount'];
 
 $sql = "SELECT COUNT(`id`) AS total_messages
-        FROM `messages` WHERE room_id = `1`";
+        FROM `messages` WHERE";
 $result = mysqli_fetch_assoc(mysqli_query($connect, $sql));
 $total_entries = $result["total_messages"];
 
@@ -13,7 +13,7 @@ if($amount != $total_entries){
 
     $sql = "SELECT *
             FROM `messages`
-            ORDER BY `id`WHERE room_id = `1` DESC";
+            ORDER BY `id` DESC";
     $result = mysqli_query($connect, $sql);
     if(mysqli_num_rows($result)>0){
         $counter = 0;
