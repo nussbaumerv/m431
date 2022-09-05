@@ -1,5 +1,5 @@
  <?php 
-$host_name = '109.106.246.1';
+$host_name = 'localhost';
 $user_name = 'u701930346_chat';
 $password = 'SirO7799!';
 $database = 'u701930346_chat_school';

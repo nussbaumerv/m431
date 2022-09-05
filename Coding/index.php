@@ -65,7 +65,6 @@ include("menu.html");
 
     </style>
     <script>
-        const room = urlParams.get('room');
 
         function change_text() {
             document.getElementById("submit").value = "LOADING...";
@@ -74,7 +73,7 @@ include("menu.html");
         function fetch() {
             var loading = 10;
             $.ajax({
-                url: 'load.php?room='+room+'&amount='+amount,
+                url: 'load.php?amount='+amount,
                 success: function(data) {
                     $("#list").prepend(data);
                     var amount = $("#list p").length;
