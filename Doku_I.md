@@ -4,7 +4,9 @@
 We wanted to do a project where coding is important and where we can learn from each other. We wanted to do something that is useful for other apprentices and that it can be used in everyday life. It should be realistic with the time and the knowledge we have and it should be fun. We started with a brainstorming and exchanging our ideas. We discussed possible ideas for our project and what would fit us. After a long exchange we decided to do a chatting website for apprentices.
 
 ## How did we inform about our project?
-We informed us a lot with the Google drive of Mr. Devlin. The documents in the drive folders helped us to go on in the project and to know how to do the IPERKA points. We did a lot of the documents like the tasklist or the work plan with the example of the drive folders. Things for coding have been researched a lot on the internet and on youtube. W3Schools helped Valentin when he had problems in coding.  
+We informed us a lot with the Google drive of Mr. Devlin. The documents in the drive folders helped us to go on in the project and to know how to do the IPERKA points. We did a lot of the documents like the tasklist or the work plan with the example of the drive folders. Things for coding have been researched a lot on the internet and on youtube. W3Schools helped Valentin when he had problems in coding. 
+
+##
 
 
 
