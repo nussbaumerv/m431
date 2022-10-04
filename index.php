@@ -3,7 +3,7 @@ include("connect.php");
 include("menu.php");
 session_start();
 $uid = $_SESSION['uid'];
-
+//please work
 
 if ($uid) {
     $sql = "SELECT * FROM users WHERE id = '$uid'";
