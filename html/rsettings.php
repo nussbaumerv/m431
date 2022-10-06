@@ -12,6 +12,7 @@ if ($uid) {
     }
 
     $row = mysqli_fetch_assoc($result);
+    $username = $row['username'];
 
     if ($row['token'] != $_SESSION['token']) {
         header("Location: login.php");

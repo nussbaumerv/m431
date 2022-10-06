@@ -1,5 +1,6 @@
 <?php
 include("alert.php");
+include("PHPMailer/mail.php");
 if (isset($_POST['submit_add'])) {
     $email = $_POST['email'];
     $sql_add = "SELECT * FROM users WHERE email = '$email'";
@@ -9,7 +10,12 @@ if (isset($_POST['submit_add'])) {
     $uid_add = $row_add['id'];
 
     if ($uid_add == "") {
-        echo "<script>createAlert('User is not registred'); </script>";
+        echo "<script>createAlert('User is not registred<br>A Invitation email was sent.'); </script>";
+        $to = $email;
+        $subject = "Edu Chat Einladung";
+        $message = "Sie wurden von ".$username." zur " . $room_name . " Gruppe auf Edu Chat eingeladen. <br>
+        Registrieren Sie sich Jetzt <a href='https://edu'chat.me/register.php'>hier</a>.";
+        send_mail($to, $subject, $message);
     } else {
         $json_id_add = $row_add['chat_rooms'];
         $json_names_add = $row_add['chat_rooms_name'];
@@ -29,6 +35,11 @@ if (isset($_POST['submit_add'])) {
             $sql_update = "UPDATE users SET chat_rooms = '$array_id_add', chat_rooms_name ='$array_name_add' WHERE id = '$uid_add'";
             $result_update = mysqli_query($connect, $sql_update);
             if ($result_update) {
+                $to = $email;
+                $subject = "Neue Edu Chat Gruppe";
+                $message = "Hi ".$row_add['username']."<br>Sie wurden von ".$username." zur " . $room_name . " Gruppe auf Edu Chat hinzugefuegt. <br>
+                Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und starten Sie jetzt mit dem chatten.";
+                send_mail($to, $subject, $message);
                 echo "<script>createAlert('User was added to Groupe'); </script>";
             } else {
                 echo "<script>createAlert('Something went wrong'); </script>";

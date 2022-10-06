@@ -1,6 +1,5 @@
 <?php
 include("connect.php");
-include("menu.php");
 session_start();
 $uid = $_SESSION['uid'];
 
@@ -15,6 +14,11 @@ if ($uid) {
 
     if ($row['token'] != $_SESSION['token']) {
         header("Location: login.php");
+    }
+    if($row['active'] == 'false'){
+        $uid = $row['id'];
+        include("2FA.php");
+        exit;
     }
 } else {
     header("Location: login.php");
@@ -36,6 +40,7 @@ if ($_GET['r'] == "") {
 }
 
 echo "<script> var room = " . $room . ";</script>";
+include("menu.php");
 
 ?>
 <!DOCTYPE html>
@@ -241,7 +246,7 @@ echo "<script> var room = " . $room . ";</script>";
     fetch();
     setInterval(function() {
         fetch();
-    }, 2000);
+    }, 5000);
         var input = document.getElementById("message");
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {

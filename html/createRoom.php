@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("connect.php");
-include("PHPMailer/mail.php");
 
 $name = $_GET['r'];
 $uid = $_SESSION['uid'];
@@ -33,12 +32,6 @@ $sql_update = "UPDATE users SET chat_rooms ='$array_id', chat_rooms_name ='$arra
 $result_update = mysqli_query($connect, $sql_update);
 
 if($result_update){
-    $to = $email;
-    $subject = "Added to Edu Chat Groupe";
-    $message = "Vielen Dank, dass Sie sich registriert haben. <br>
-    Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und erstellen Sie Ihren ersten Room.";
-    send_mail($to, $subject, $message);
-
     header("Location: index.php?r=".$last_id);
 }
 else{

@@ -27,13 +27,20 @@ if (isset($_POST['submit'])) {
 
         $rooms = '["1"]';
         $chat_rooms_name = '["Welcome Chat"]';
-        $sql = "INSERT INTO users (name, username, email, password, token, chat_rooms, chat_rooms_name, active) VALUES ('$name', '$username', '$email', '$password', '$token','$rooms', '$chat_rooms_name', 'true')";
+        $FA = rand(100000,999999);
+        $sql = "INSERT INTO users (name, username, email, password, token, chat_rooms, chat_rooms_name, active, 2FA) VALUES ('$name', '$username', '$email', '$password', '$token','$rooms', '$chat_rooms_name', 'false', '$FA')";
         $result = mysqli_query($connect, $sql);
         if ($result) {
             $to = $email;
             $subject = "Wilkommen bei Edu Chat";
             $message = "Vielen Dank, dass Sie sich registriert haben. <br>
             Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und erstellen Sie Ihren ersten Room.";
+            send_mail($to, $subject, $message);
+
+            $to = $email;
+            $subject = "Aktivierungs Code";
+            $message = "Ihr Aktivierungs Code: ".$FA." <br>
+            Geben Sie ihren Code hier <a href='https://edu'chat.me/index.php'>hier</a> ein.";
             send_mail($to, $subject, $message);
 
             header("Location: login.php");
