@@ -1,4 +1,5 @@
 <?php
+include("PHPMailer/mail.php");
 include "connect.php";
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
@@ -29,6 +30,12 @@ if (isset($_POST['submit'])) {
         $sql = "INSERT INTO users (name, username, email, password, token, chat_rooms, chat_rooms_name, active) VALUES ('$name', '$username', '$email', '$password', '$token','$rooms', '$chat_rooms_name', 'true')";
         $result = mysqli_query($connect, $sql);
         if ($result) {
+            $to = $email;
+            $subject = "Wilkommen bei Edu Chat";
+            $message = "Vielen Dank, dass Sie sich registriert haben. <br>
+            Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und erstellen Sie Ihren ersten Room.";
+            send_mail($to, $subject, $message);
+
             header("Location: login.php");
         } else {
             echo "Something went wrong";

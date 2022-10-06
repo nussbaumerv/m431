@@ -3,7 +3,6 @@ include("connect.php");
 include("menu.php");
 session_start();
 $uid = $_SESSION['uid'];
-//please work
 
 if ($uid) {
     $sql = "SELECT * FROM users WHERE id = '$uid'";
@@ -133,6 +132,27 @@ echo "<script> var room = " . $room . ";</script>";
             text-decoration: underline;
             color: grey;
         }
+
+        #list {
+            height: 70vh;
+            overflow-y: scroll;
+        }
+
+        .messageContainer {
+            text-align: center;
+            background-color: #f0f2f1;
+            padding: 10px 20px 10px 20px;
+            margin: 10px;
+            display: block;
+        }
+
+        .user {
+            color: grey;
+        }
+
+        .content {
+            font-size: 20px;
+        }
     </style>
 
 </head>
@@ -145,11 +165,19 @@ echo "<script> var room = " . $room . ";</script>";
 
     var value;
 
-    fetch();
-    setInterval(function() {
-        fetch();
-    }, 5000);
-
+    function sendNotification(value) {
+        if (document.visibilityState == "hidden" && value != amount) {
+            if (Notification.permission == "granted") {
+                const notification = new Notification("You've got a new message!");
+            } else if (Notification.permission == "denied") {
+                Notification.requestPermission().then((permission) => {
+                    if (permission === "granted") {
+                        const notification = new Notification("Your Notifications should work now!");
+                    }
+                });
+            }
+        }
+    }
 
     function fetch() {
         if (room == 0) {
@@ -162,60 +190,72 @@ echo "<script> var room = " . $room . ";</script>";
             success: function(data) {
                 $("#list").prepend(data);
                 value = document.getElementById('amount').innerHTML;
+                sendNotification(value);
                 var minus = value - 1;
-                console.log(value);
-                if ($("#list p").length > value) {
-                    $('#list p:gt(' + minus + ')').remove();
+                if ($("#list div").length > value) {
+                    $('#list div:gt(' + minus + ')').remove();
                 }
-                $("#list p").fadeIn();
+                $("#list div").fadeIn();
                 fetch();
             }
         });
         amount = value;
+        var objDiv = document.getElementById("list");
+        objDiv.scrollTop = objDiv.scrollHeight;
     }
 
     function save() {
         var message = document.getElementById("message").value;
-        $.ajax({
-            url: "send.php",
-            type: "POST",
-            data: {
-                message: message,
-                room: room
-            },
-            cache: false,
-            success: function(dataResult) {
-                document.getElementById("message").value == "";
-                fetch();
-            }
-        });
+        if ("" != message) {
+            $.ajax({
+                url: "send.php",
+                type: "POST",
+                data: {
+                    message: message,
+                    room: room
+                },
+                cache: false,
+                success: function(dataResult) {
+                    document.getElementById("message").value == "";
+                    fetch();
+                    cleanInput();
+                }
+            });
+        }
     }
 </script>
 
 <body>
-    <span class="linksSettings"><a href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
+    <span class="linksSettings"><a <?php echo $display ?> href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
     <br><br>
     <h1><?php echo $room_name; ?></h1><br>
 
     <div id="list">
-        <p>Start sending messages</p>
+        <div>Start sending messages</div>
     </div>
     <div <?php echo $display ?> id="container">
-        <input class="send_input" type="text" id="message" name="message"> <br>
+        <input class="send_input" type="text" id="message" name="message">
         <button id="submit_button" class="send_button" type="submit" onclick="save()">Send</button>
     </div>
     <script>
+    fetch();
+    setInterval(function() {
+        fetch();
+    }, 2000);
         var input = document.getElementById("message");
         input.addEventListener("keypress", function(event) {
             if (event.key === "Enter") {
                 event.preventDefault();
                 save();
-                input.value = "";
+                cleanInput();
             }
         });
+
+        function cleanInput() {
+            input.value = "";
+        }
     </script>
 
 </body>
-
 
 </html>

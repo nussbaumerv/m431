@@ -21,9 +21,9 @@ if ($uid) {
     if ($row['token'] == $_SESSION['token']) {
         if ($amount != count($array_id)) {
             for ($i = 0; $i < count($array_id); $i++) {
-                echo "<p><a class='linksRooms' href='https://edu-chat.me?r=" . $array_id[$i] . "'>" . $array_name[$i] . "</a></p>";
+                echo "<div><a class='linksRooms' href='https://edu-chat.me?r=" . $array_id[$i] . "'>" . $array_name[$i] . "</a></div>";
             }
-            echo "<p style='font-size: 0px' id='amount'>" . count($array_id) . "</p>";
+            echo "<div style='font-size: 0px' id='amount'>" . count($array_id) . "</div>";
         } 
     } else {
         echo "You dont't have accsess";

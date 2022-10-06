@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("PHPMailer/mail.php");
 include("connect.php");
 
 if ($_SESSION['uid']) {
@@ -25,6 +26,25 @@ if (isset($_POST['submit'])) {
 
 
     if (password_verify($password, $pwd)) {
+        $date = date("d/m/Y");
+        $time = date("H:i:s");
+
+        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+            $ip = $_SERVER['HTTP_CLIENT_IP'];
+        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+            $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+        } else {
+            $ip = $_SERVER['REMOTE_ADDR'];
+        }
+
+        $type = "Login";
+        $status = "OK";
+
+        $to = $email;
+        $subject = "Neues Login";
+        $message = "Am " . $date . " um " . $time . " loggte sich ein User mit der IP Adresse " . $ip . " erfolgreich in Ihren Account ein. <br>
+        Fals Sie dies nicht waren ändern Sie bitte sofort Ihr Passwort in den <a href='https://edu'chat.me/settings.php'>einstellungen</a>.";
+        send_mail($to, $subject, $message);
         $_SESSION['token'] = $row['token'];;
         $_SESSION['uid'] = $row['id'];
         header("Location: index.php");
@@ -107,7 +127,6 @@ if (isset($_POST['submit'])) {
         h1 {
             color: rgb(100, 100, 100);
         }
-
     </style>
 
 </head>

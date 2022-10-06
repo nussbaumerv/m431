@@ -1,34 +1,42 @@
 <?php
+include("alert.php");
 if (isset($_POST['submit_add'])) {
     $email = $_POST['email'];
     $sql_add = "SELECT * FROM users WHERE email = '$email'";
     $result_add = mysqli_query($connect, $sql_add);
+
     $row_add = mysqli_fetch_assoc($result_add);
     $uid_add = $row_add['id'];
 
-    $json_id_add = $row_add['chat_rooms'];
-    $json_names_add = $row_add['chat_rooms_name'];
+    if ($uid_add == "") {
+        echo "<script>createAlert('User is not registred'); </script>";
+    } else {
+        $json_id_add = $row_add['chat_rooms'];
+        $json_names_add = $row_add['chat_rooms_name'];
 
-    $array_id_add = json_decode($json_id_add, true);
-    $array_name_add = json_decode($json_names_add, true);
+        $array_id_add = json_decode($json_id_add, true);
+        $array_name_add = json_decode($json_names_add, true);
 
-    array_push($array_id_add, $room);
-    array_push($array_name_add, $room_name);
+        if (in_array($room, $array_id_add)) {
+            echo "<script>createAlert('User is already in Groupe'); </script>";
+        } else {
+            array_push($array_id_add, $room);
+            array_push($array_name_add, $room_name);
 
-    $array_id_add = json_encode($array_id_add);
-    $array_name_add = json_encode($array_name_add);
+            $array_id_add = json_encode($array_id_add);
+            $array_name_add = json_encode($array_name_add);
 
-    $sql_update = "UPDATE users SET chat_rooms = '$array_id_add', chat_rooms_name ='$array_name_add' WHERE id = '$uid_add'";
-    $result_update = mysqli_query($connect, $sql_update);
-    if($result_update){
-        echo "User sucessfuly added";
-    }
-    else{
-        echo "Something went wrong";
+            $sql_update = "UPDATE users SET chat_rooms = '$array_id_add', chat_rooms_name ='$array_name_add' WHERE id = '$uid_add'";
+            $result_update = mysqli_query($connect, $sql_update);
+            if ($result_update) {
+                echo "<script>createAlert('User was added to Groupe'); </script>";
+            } else {
+                echo "<script>createAlert('Something went wrong'); </script>";
+            }
+        }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -91,10 +99,10 @@ if (isset($_POST['submit_add'])) {
     <br><br>
     <h1><?php echo $room_name; ?></h1>
     <br>
-<h3>Add User to Room</h3>
-<br>
+    <h3>Add User to Room</h3>
+    <br>
     <form method="post">
-        <input placeholder="Email" class="send_input" type="text" name="email"> <br>
+        <input placeholder="Email" class="send_input" type="email" name="email"> <br>
         <button class="send_button" name="submit_add" type="submit">Send</button>
     </form>
 </body>

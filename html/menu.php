@@ -117,6 +117,8 @@ if ($uid) {
 
     #top_menu {
       height: 70%;
+      overflow-x: hidden;
+      overflow-y: scroll;
     }
 
     .input_menu {
@@ -175,7 +177,7 @@ if ($uid) {
     </div>
     <div id="bottom_menu">
       <form method="get" action="createRoom.php">
-        <input class="input_menu" type="text" name="r"> <br>
+        <input class="input_menu" type="text" name="r" required> <br>
         <button class="button_menu" type="submit" onclick="save()">Create Groupe</button>
       </form>
     </div>
