@@ -56,6 +56,7 @@ include("menu.php");
         body {
             text-align: center;
             font-family: arial;
+            margin: 0px;
         }
 
         #container {
@@ -141,22 +142,32 @@ include("menu.php");
         #list {
             height: 70vh;
             overflow-y: scroll;
+            width: 100vw;
         }
 
         .messageContainer {
             text-align: center;
             background-color: #f0f2f1;
-            padding: 10px 20px 10px 20px;
-            margin: 10px;
+            padding: 10px 0px 10px 0px;
+            margin: 2px;
             display: block;
+            position: relative;
         }
 
         .user {
             color: grey;
         }
 
+        i{
+            position:absolute;
+            right:10px;
+        }
+
         .content {
             font-size: 20px;
+        }
+        .exLink{
+            color:black;
         }
     </style>
 

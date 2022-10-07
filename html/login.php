@@ -36,10 +36,6 @@ if (isset($_POST['submit'])) {
         } else {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
-
-        $type = "Login";
-        $status = "OK";
-
         $to = $email;
         $subject = "Neues Login";
         $message = "Am " . $date . " um " . $time . " loggte sich ein User mit der IP Adresse " . $ip . " erfolgreich in Ihren Account ein. <br>

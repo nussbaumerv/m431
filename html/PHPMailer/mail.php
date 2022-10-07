@@ -17,12 +17,12 @@ function send_mail($to, $subject, $message)
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->CharSet    = 'UTF-8';
-    $mail->Username   = 'mail@home.valentin-nussbaumer.com';
-    $mail->Password   = 'rPXeeq3n7BkJ$e@S';
+    $mail->Username   = 'noreply@valentin-nussbaumer.com';
+    $mail->Password   = '?rJ#3Y9oqf#NTN79';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
-    $mail->setFrom('mail@home.valentin-nussbaumer.com', 'Edu Chat');
+    $mail->setFrom('noreply@valentin-nussbaumer.com', 'Edu Chat');
     $mail->addAddress($to);
 
     $mail->isHTML(true);
@@ -65,7 +65,7 @@ function send_mail($to, $subject, $message)
         <tr>
     <td align="center" style="background-color:rgb(189, 184, 184); padding:30px;">
     <a href="https://valentin-nussbaumer.com"><img src="https://valentin-bewerbung.com/media/Bildschirmfoto%202021-08-04%20um%2019.59.26.png" alt="" width="90" style="height:auto;display:block;" /></a>
-   <br> Valentin Nussbaumer | <a style="color:black" href="https://edu-chat.me">edu-chat.me</a> | <a style="color:black" href="mailto: mail@valentin-nussbaumer.com">mail@valentin-nussbaumer.com</a>
+   <br> Edu Chat | <a style="color:black" href="https://edu-chat.me">edu-chat.me</a> | <a style="color:black" href="mailto: mail@valentin-nussbaumer.com">mail@valentin-nussbaumer.com</a>
   </td>
         </tr>
     </table>

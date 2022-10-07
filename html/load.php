@@ -24,7 +24,7 @@ if ($amount != $total_entries) {
             $sender = $result_name["username"];
 
             echo "<div class='messageContainer'>
-            <t class='user'>" . $sender. "</t><br>
+            <t class='user'>" . $sender. "  <i>".$row['time']." | ".$row['date']."</i></t><br>
             <t class='content'>" .$row["content"] . "</t><br>
             </div>";
         }

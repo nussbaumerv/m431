@@ -1,8 +1,4 @@
 <?php
-session_start();
-date_default_timezone_set("Europe/Zurich");
-include("connect.php");
-$message = $_POST['message'];
 
 $result="";
 $message = preg_replace_callback('#(?:https?://\S+)|(?:www.\S+)|(?:\S+\.\S+)#', function($arr)
@@ -25,16 +21,9 @@ $message = preg_replace_callback('#(?:https?://\S+)|(?:www.\S+)|(?:\S+\.\S+)#', 
         parse_str($url['query'], $query);
         $linkPrev = sprintf('<iframe class="embedded-video" src="http://www.youtube.com/embed/%s" allowfullscreen></iframe>', $query['v']);
     }
-    $link = sprintf('<a class="exLink" href="%1$s">%1$s</a>', $arr[0]);
+    $link = sprintf('<a href="%1$s">%1$s</a>', $arr[0]);
     $result = $linkPrev."<br>".$link."<br>";
 }, $message);
 $message = $result . $message;
 
-
-$room = $_POST['room'];
-$uid = $_SESSION['uid'];
-$date = date("d/m/Y");
-$time = date("H:i");
-$sql = "INSERT INTO messages (room_id, content, sender_id, date, time) VALUES ('$room', '$message', '$uid', '$date', '$time')";
-$result = mysqli_query($connect, $sql);
 ?>
