@@ -17,12 +17,12 @@ function send_mail($to, $subject, $message)
     $mail->Host       = 'smtp.hostinger.com';
     $mail->SMTPAuth   = true;
     $mail->CharSet    = 'UTF-8';
-    $mail->Username   = 'noreply@valentin-nussbaumer.com';
-    $mail->Password   = '?rJ#3Y9oqf#NTN79';
+    $mail->Username   = 'noreply@mail.valentin-nussbaumer.com';
+    $mail->Password   = 'd47L8tjKqnd5N8&o';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
 
-    $mail->setFrom('noreply@valentin-nussbaumer.com', 'Edu Chat');
+    $mail->setFrom('noreply@mail.valentin-nussbaumer.com', 'Edu Chat');
     $mail->addAddress($to);
 
     $mail->isHTML(true);

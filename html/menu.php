@@ -29,7 +29,6 @@ if ($uid) {
 ?>
 
 <html>
-
 <head>
   <style>
     * {
@@ -177,7 +176,7 @@ if ($uid) {
     </div>
     <div id="bottom_menu">
       <form method="get" action="createRoom.php">
-        <input class="input_menu" type="text" name="r" required> <br>
+        <input placeholder="Room" class="input_menu" type="text" name="r" required> <br>
         <button class="button_menu" type="submit" onclick="save()">Create Groupe</button>
       </form>
     </div>

@@ -20,14 +20,13 @@ if (isset($_POST['submit'])) {
 
     if ($row_email['email'] != false) {
         echo '<br>Diese E-Mail-Adresse ist bereits vergeben';
-    }
-    else if($row_un['username'] != false){
-        echo '<br>Dieser Username ist bereits vergeben'; 
+    } else if ($row_un['username'] != false) {
+        echo '<br>Dieser Username ist bereits vergeben';
     } else {
 
         $rooms = '["1"]';
         $chat_rooms_name = '["Welcome Chat"]';
-        $FA = rand(100000,999999);
+        $FA = rand(100000, 999999);
         $sql = "INSERT INTO users (name, username, email, password, token, chat_rooms, chat_rooms_name, active, 2FA) VALUES ('$name', '$username', '$email', '$password', '$token','$rooms', '$chat_rooms_name', 'false', '$FA')";
         $result = mysqli_query($connect, $sql);
         if ($result) {
@@ -39,7 +38,7 @@ if (isset($_POST['submit'])) {
 
             $to = $email;
             $subject = "Aktivierungs Code";
-            $message = "Ihr Aktivierungs Code: ".$FA." <br>
+            $message = "Ihr Aktivierungs Code: " . $FA . " <br>
             Geben Sie ihren Code hier <a href='https://edu'chat.me/index.php'>hier</a> ein.";
             send_mail($to, $subject, $message);
 
@@ -53,15 +52,8 @@ if (isset($_POST['submit'])) {
 <html>
 
 <head>
-    <html lang="en">
-    <meta charset="utf-8" />
-    <title>V-Todo</title>
-    <link rel="apple-touch-icon" sizes="128x128" href="icon.png">
-    <link rel="shortcut icon" href="icon.png" type="img/vnd.microsoft.icon" />
-    <link rel="manifest" href="manifest.webmanifest">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include("header.html"); ?>
+    <title>Edu Chat</title>
     <style>
         body {
             background-color: #dbdbdb;

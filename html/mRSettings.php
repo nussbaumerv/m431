@@ -13,7 +13,7 @@ if (isset($_POST['submit_add'])) {
         echo "<script>createAlert('User is not registred<br>A Invitation email was sent.'); </script>";
         $to = $email;
         $subject = "Edu Chat Einladung";
-        $message = "Sie wurden von ".$username." zur " . $room_name . " Gruppe auf Edu Chat eingeladen. <br>
+        $message = "Sie wurden von " . $username . " zur " . $room_name . " Gruppe auf Edu Chat eingeladen. <br>
         Registrieren Sie sich Jetzt <a href='https://edu'chat.me/register.php'>hier</a>.";
         send_mail($to, $subject, $message);
     } else {
@@ -37,7 +37,7 @@ if (isset($_POST['submit_add'])) {
             if ($result_update) {
                 $to = $email;
                 $subject = "Neue Edu Chat Gruppe";
-                $message = "Hi ".$row_add['username']."<br>Sie wurden von ".$username." zur " . $room_name . " Gruppe auf Edu Chat hinzugefuegt. <br>
+                $message = "Hi " . $row_add['username'] . "<br>Sie wurden von " . $username . " zur " . $room_name . " Gruppe auf Edu Chat hinzugefuegt. <br>
                 Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und starten Sie jetzt mit dem chatten.";
                 send_mail($to, $subject, $message);
                 echo "<script>createAlert('User was added to Groupe'); </script>";
@@ -52,10 +52,8 @@ if (isset($_POST['submit_add'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $room_name; ?></title>
+    <?php include("header.html"); ?>
+    <title>Settings: <?php echo $room_name; ?></title>
     <style>
         * {
             text-align: center;

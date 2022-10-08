@@ -63,10 +63,8 @@ if (isset($_POST['submit_user'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $room_name; ?></title>
+    <?php include("header.html"); ?>
+    <title>Settings</title>
     <style>
         * {
             text-align: center;
@@ -114,10 +112,11 @@ if (isset($_POST['submit_user'])) {
         .send_button:active {
             box-shadow: none;
         }
-        #logout{
-            background-color:orange;
+
+        #logout {
+            background-color: orange;
             text-decoration: none;
-            color:black;
+            color: black;
         }
     </style>
 </head>
@@ -150,7 +149,7 @@ if (isset($_POST['submit_user'])) {
     </form>
 
     <br><br>
-    <a href="logout.php" id="logout" class="send_button" >Logout</a>
+    <a href="logout.php" id="logout" class="send_button">Logout</a>
 
 </body>
 

@@ -33,10 +33,7 @@ if (isset($_POST['submit_code'])) {
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $room_name; ?></title>
+    <title>2FA</title>
     <style>
         * {
             text-align: center;
@@ -85,11 +82,11 @@ if (isset($_POST['submit_code'])) {
         .send_button:active {
             box-shadow: none;
         }
-        .sc{
+        .sendCodeAgain{
             color:black;
             text-decoration: none;
         }
-        .sc:hover{
+        .sendCodeAgain:hover{
             text-decoration: underline;
         }
     </style>
@@ -105,7 +102,7 @@ if (isset($_POST['submit_code'])) {
         <button class="send_button" name="submit_code" type="submit">Send</button>
     </form>
     <br>
-    <a class="sc" href='?sc=1'>Send Code again</a>
+    <a class="sendCodeAgain" href='?sc=1'>Send Code again</a>
 </body>
 
 </html>
