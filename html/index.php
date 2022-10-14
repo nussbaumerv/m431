@@ -1,7 +1,6 @@
 <?php
 include("connect.php");
-session_start();
-$uid = $_SESSION['uid'];
+$uid = $_COOKIE['uid'];
 
 if ($uid) {
     $sql = "SELECT * FROM users WHERE id = '$uid'";
@@ -12,7 +11,7 @@ if ($uid) {
 
     $row = mysqli_fetch_assoc($result);
 
-    if ($row['token'] != $_SESSION['token']) {
+    if ($row['token'] != $uid = $_COOKIE['token']) {
         header("Location: login.php");
     }
     if ($row['active'] == 'false') {
@@ -121,16 +120,18 @@ include("menu.php");
 </script>
 
 <body>
-    <span class="linksSettings"><a <?php echo $display ?> href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
-    <br><br>
-    <h1><?php echo $room_name; ?></h1><br>
+    <div id="infoHead">
+        <span class="linksSettings"><a <?php echo $display ?> href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
+        <br><br>
+        <h1><?php echo $room_name; ?></h1><br>
+    </div>
 
     <div id="list">
         <div>Start sending messages</div>
     </div>
     <div <?php echo $display ?> id="container">
-        <input class="send_input" type="text" id="message" name="message">
-        <button id="submit_button" class="send_button" type="submit" onclick="save()">Send</button>
+        <input class="send_input messageInput" type="text" id="message" name="message">
+        <button id="submit_button" class="send_button messageButton" type="submit" onclick="save()">Send</button>
     </div>
     <script>
         fetch();

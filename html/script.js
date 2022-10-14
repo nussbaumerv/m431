@@ -1,5 +1,5 @@
-function submit_button_onlick() {
-    const btn = document.querySelector(".submit_button");
-    btn.classList.add("button_loading");
-    //btn.classList.remove("button--loading");
+function startLoader(){
+    alert("digga");
+    document.getElementById("loader").display = "block";
+    
 }

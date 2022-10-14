@@ -33,63 +33,8 @@ if (isset($_POST['submit_code'])) {
 <html lang="en">
 
 <head>
+    <?php include("header.html"); ?>
     <title>2FA</title>
-    <style>
-        * {
-            text-align: center;
-            font-family: arial;
-        }
-
-        .send_input {
-            border: solid;
-            border-color: grey;
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            border-radius: 0px;
-            color: grey;
-            padding: 10px 40px 10px 40px;
-            box-shadow: 5px 10px 18px #888888;
-        }
-
-        .send_input:focus {
-            border-radius: 0px;
-            outline: none;
-            background-color: rgb(220, 220, 220);
-            box-shadow: 2px 4px 6px #888888;
-        }
-
-        .send_button {
-            border: solid;
-            -webkit-appearance: none;
-            border-color: grey;
-            background-color: rgb(209, 209, 209);
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            font-weight: normal;
-            border-radius: 0px;
-            padding: 10px 30px;
-            color: grey;
-            cursor: pointer;
-            box-shadow: 2.5px 5px 9px #888888;
-        }
-
-        .send_button:hover {
-            background-color: rgb(190, 190, 190);
-        }
-
-        .send_button:active {
-            box-shadow: none;
-        }
-        .sendCodeAgain{
-            color:black;
-            text-decoration: none;
-        }
-        .sendCodeAgain:hover{
-            text-decoration: underline;
-        }
-    </style>
 </head>
 
 <body>

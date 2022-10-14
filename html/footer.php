@@ -2,28 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <style media="screen">
-    #footer {
-      color: black;
-      padding: 3vw;
-      width: 94vw;
-      background-color: #e6e6e6;
-    }
-
-    #footer a {
-      color: #424241;
-      text-decoration: none;
-    }
-
-    #footer a:hover {
-      color: #b0b0b0;
-    }
-
-    #footer img {
-      width: 80px;
-      height: 80px;
-    }
-  </style>
   <meta charset="utf-8">
   <title></title>
 </head>

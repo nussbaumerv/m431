@@ -41,8 +41,9 @@ if (isset($_POST['submit'])) {
         $message = "Am " . $date . " um " . $time . " loggte sich ein User mit der IP Adresse " . $ip . " erfolgreich in Ihren Account ein. <br>
         Fals Sie dies nicht waren ändern Sie bitte sofort Ihr Passwort in den <a href='https://edu'chat.me/settings.php'>einstellungen</a>.";
         send_mail($to, $subject, $message);
-        $_SESSION['token'] = $row['token'];;
-        $_SESSION['uid'] = $row['id'];
+        setcookie('token', $row['token'], time() + (86400 * 30), "/");
+        setcookie('uid', $row['id'], time() + (86400 * 30), "/");
+        
         header("Location: index.php");
     } else {
         echo '<fc><br>Falsches Passwort</fc>
@@ -60,55 +61,6 @@ if (isset($_POST['submit'])) {
     <style>
         body {
             background-color: #dbdbdb;
-            font-family: arial;
-            margin: 0px;
-            text-align: center;
-        }
-
-        input[type="email"],
-        input[type="password"] {
-            border: solid;
-            border-color: grey;
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            border-radius: 0px;
-            color: grey;
-            padding: 20px 70px 20px 40px;
-            box-shadow: 5px 10px 18px #888888;
-        }
-
-        input[type="email"]:focus,
-        input[type="password"]:focus {
-            border-radius: 0px;
-            outline: none;
-            background-color: rgb(220, 220, 220);
-            box-shadow: 2px 4px 6px #888888;
-        }
-
-        #button {
-            border: solid;
-            -webkit-appearance: none;
-            border-color: grey;
-            background-color: rgb(209, 209, 209);
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            font-weight: normal;
-            border-radius: 0px;
-            padding: 10px 30px;
-            color: grey;
-            cursor: pointer;
-            box-shadow: 2.5px 5px 9px #888888;
-            text-decoration: none;
-        }
-
-        #button:hover {
-            background-color: rgb(190, 190, 190);
-        }
-
-        #button:active {
-            box-shadow: none;
         }
 
         h1 {
@@ -121,17 +73,18 @@ if (isset($_POST['submit'])) {
 <body>
     <br>
     <h1>Login</h1>
+    <br>
     <form action="" method="post">
-        <input name="email" type="email" placeholder="Email"> <br>
-        <input name="password" type="password" placeholder="Password"> <br>
-        <input id="button" name="submit" type="submit">
+        <input class="send_input" name="email" type="email" placeholder="Email"> <br>
+        <input class="send_input"name="password" type="password" placeholder="Password"> <br>
+        <input class="send_button" name="submit" type="submit">
 
     </form>
     ––– OR –––
     <br>
     <br>
     <br>
-    <a id="button" href="register.php">Registrieren</a>
+    <a class="send_button" href="register.php">Registrieren</a>
 
 </body>
 

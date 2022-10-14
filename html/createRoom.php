@@ -1,10 +1,9 @@
 <?php
-session_start();
 include("connect.php");
 
 $name = $_GET['r'];
-$uid = $_SESSION['uid'];
-$mods = '["'.$uid.'"]';
+$uid = $_COOKIE['uid'];
+$mods = '['.$uid.']';
 
 $sql = "SELECT * FROM users WHERE id = '$uid'";
 $result = mysqli_query($connect, $sql);

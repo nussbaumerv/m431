@@ -1,7 +1,6 @@
 <?php
 include("connect.php");
-session_start();
-$uid = $_SESSION['uid'];
+$uid = $_COOKIE['uid'];
 $amount = $_GET['amount'];
 
 if ($uid) {
@@ -18,9 +17,9 @@ if ($uid) {
     $array_id = json_decode($json_id, true);
     $array_name = json_decode($json_names, true);
 
-    if ($row['token'] == $_SESSION['token']) {
+    if ($row['token'] == $_COOKIE['token']) {
         if ($amount != count($array_id)) {
-            for ($i = 0; $i < count($array_id); $i++) {
+            for ($i = count($array_id)-1; $i > -1; $i--) {
                 echo "<div><a class='linksRooms' href='https://edu-chat.me?r=" . $array_id[$i] . "'>" . $array_name[$i] . "</a></div>";
             }
             echo "<div style='font-size: 0px' id='amount'>" . count($array_id) . "</div>";

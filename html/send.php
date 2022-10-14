@@ -32,7 +32,7 @@ $message = $result . $message;
 
 
 $room = $_POST['room'];
-$uid = $_SESSION['uid'];
+$uid = $_COOKIE['uid'];
 $date = date("d/m/Y");
 $time = date("H:i");
 $sql = "INSERT INTO messages (room_id, content, sender_id, date, time) VALUES ('$room', '$message', '$uid', '$date', '$time')";

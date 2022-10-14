@@ -1,8 +1,7 @@
 <?php
 include("connect.php");
 include("menu.php");
-session_start();
-$uid = $_SESSION['uid'];
+$uid = $_COOKIE['uid'];
 
 if ($uid) {
     $sql = "SELECT * FROM users WHERE id = '$uid'";
@@ -14,7 +13,7 @@ if ($uid) {
     $row = mysqli_fetch_assoc($result);
     $username = $row['username'];
 
-    if ($row['token'] != $_SESSION['token']) {
+    if ($row['token'] != $_COOKIE['token']) {
         header("Location: login.php");
     }
 } else {

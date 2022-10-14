@@ -1,33 +1,6 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
-use PHPMailer\PHPMailer\Exception;
-
-
-require 'src/Exception.php';
-require 'src/PHPMailer.php';
-require 'src/SMTP.php';
-
-function send_mail($to, $subject, $message)
-{
-  $mail = new PHPMailer(true);
-
-  $mail->IsSMTP();
-  $mail->Host       = "smtp.mail.me.com"; 
-
-  $mail->SMTPAuth   = true;        
-  $mail->SMTPSecure = "tls";             
-  $mail->Host       = "smtp.mail.me.com";     
-  $mail->Username   = 'vali7799@icloud.com';
-  $mail->Password   = 'jmtn-gkjr-zzpm-ywdt';
-  $mail->Port       = 587;
-  $mail->setFrom('vali7799@icloud.com', 'Edu Chat');
-  $mail->addAddress($to);
-
-  $mail->isHTML(true);
-  $mail->Subject = $subject;
-  $mail->Body = '
+function send_mail($to, $subject, $message){
+$sendMessage = '
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -70,6 +43,15 @@ function send_mail($to, $subject, $message)
         </tr>
     </table>
 </body>
-</html>';
-  $mail->send();
+</html>
+';
+
+// Always set content-type when sending HTML email
+$headers = "MIME-Version: 1.0" . "\r\n";
+$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+// More headers
+$headers .= 'From: <noreply@edu-chat.me>' . "\r\n";
+
+mail($to,$subject,$sendMessage,$headers);
 }

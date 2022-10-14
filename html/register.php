@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
         echo '<br>Dieser Username ist bereits vergeben';
     } else {
 
-        $rooms = '["1"]';
+        $rooms = '[1]';
         $chat_rooms_name = '["Welcome Chat"]';
         $FA = rand(100000, 999999);
         $sql = "INSERT INTO users (name, username, email, password, token, chat_rooms, chat_rooms_name, active, 2FA) VALUES ('$name', '$username', '$email', '$password', '$token','$rooms', '$chat_rooms_name', 'false', '$FA')";
@@ -57,65 +57,10 @@ if (isset($_POST['submit'])) {
     <style>
         body {
             background-color: #dbdbdb;
-            font-family: arial;
-            margin: 0px;
-            text-align: center;
-        }
-
-        input[type="email"],
-        input[type="text"],
-        input[type="password"] {
-            border: solid;
-            border-color: grey;
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            border-radius: 0px;
-            color: grey;
-            padding: 20px 70px 20px 40px;
-            box-shadow: 5px 10px 18px #888888;
-        }
-
-        input[type="email"]:focus,
-        input[type="text"]:focus,
-        input[type="password"]:focus {
-            border-radius: 0px;
-            outline: none;
-            background-color: rgb(220, 220, 220);
-            box-shadow: 2px 4px 6px #888888;
-        }
-
-        #button {
-            border: solid;
-            -webkit-appearance: none;
-            border-color: grey;
-            background-color: rgb(209, 209, 209);
-            margin-bottom: 1vh;
-            font-size: 16px;
-            opacity: 0.97;
-            font-weight: normal;
-            border-radius: 0px;
-            padding: 10px 30px;
-            color: grey;
-            cursor: pointer;
-            box-shadow: 2.5px 5px 9px #888888;
-            text-decoration: none;
-        }
-
-        #button:hover {
-            background-color: rgb(190, 190, 190);
-        }
-
-        #button:active {
-            box-shadow: none;
         }
 
         h1 {
             color: rgb(100, 100, 100);
-        }
-
-        vc {
-            color: red;
         }
     </style>
 
@@ -124,18 +69,19 @@ if (isset($_POST['submit'])) {
 <body>
     <br>
     <h1>Registrieren</h1>
+    <br>
     <form action="" method="post">
-        <input name="name" type="text" placeholder="Name"> <br>
-        <input name="username" type="text" placeholder="Username"> <br>
-        <input name="email" type="email" placeholder="Email"> <br>
-        <input name="password" type="password" placeholder="Password"> <br>
-        <input id="button" name="submit" type="submit">
+        <input class="send_input" name="name" type="text" placeholder="Name"> <br>
+        <input class="send_input" name="username" type="text" placeholder="Username"> <br>
+        <input class="send_input" name="email" type="email" placeholder="Email"> <br>
+        <input class="send_input" name="password" type="password" placeholder="Password"> <br>
+        <input class="send_button" name="submit" type="submit">
     </form>
     ––– OR –––
     <br>
     <br>
     <br>
-    <a id="button" href="login.php">Login</a>
+    <a class="send_input" href="login.php">Login</a>
 
 </body>
 
