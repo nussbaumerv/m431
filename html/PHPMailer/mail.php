@@ -15,12 +15,11 @@ function send_mail($to, $subject, $message)
 
   $mail->IsSMTP();
   $mail->Host       = "smtp.mail.me.com"; 
-
   $mail->SMTPAuth   = true;        
   $mail->SMTPSecure = "tls";             
   $mail->Host       = "smtp.mail.me.com";     
   $mail->Username   = 'vali7799@icloud.com';
-  $mail->Password   = 'jmtn-gkjr-zzpm-ywdt';
+  $mail->Password   = 'ncsg-rzop-ardx-nhut';
   $mail->Port       = 587;
   $mail->setFrom('vali7799@icloud.com', 'Edu Chat');
   $mail->addAddress($to);
@@ -58,7 +57,10 @@ function send_mail($to, $subject, $message)
         <tr>
             <td style="padding:0px 30px; font-size:16px;">
               ' . $message . '
-              <br><br><br><br><br><br>
+              <br><br>
+              Regards, <br>
+              Edu Chat
+              <br><br><br><br>
             </td>
             
         </tr>

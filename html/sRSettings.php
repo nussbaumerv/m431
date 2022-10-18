@@ -25,7 +25,7 @@ if (isset($_POST['submit_leave'])) {
         $sql_update = "UPDATE users SET chat_rooms = '$array_id_remove', chat_rooms_name ='$array_name_remove' WHERE id = '$uid'";
         $result_update = mysqli_query($connect, $sql_update);
         if ($result_update) {
-            echo "<script>createAlert('You sucsessfuly left this room'); </script>";
+            echo "<script>createAlert('You sucsessfuly left this room.'); </script>";
             header("Location: index.php");
         } else {
             echo "<script>createAlert('Something went wrong'); </script>";
@@ -55,7 +55,7 @@ if (isset($_POST['submit_leave'])) {
     <h1><?php echo $room_name; ?></h1>
     <br>
     <form method="post">
-        <button id="leave" class="send_button" name="submit_leave" type="submit">Leave room</button>
+        <button id="leave" class="send_button" name="submit_leave" type="submit">Leave Room</button>
     </form>
 </body>
 

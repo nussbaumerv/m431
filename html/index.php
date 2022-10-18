@@ -11,6 +11,8 @@ if ($uid) {
 
     $row = mysqli_fetch_assoc($result);
 
+
+
     if ($row['token'] != $uid = $_COOKIE['token']) {
         header("Location: login.php");
     }
@@ -22,12 +24,19 @@ if ($uid) {
 } else {
     header("Location: login.php");
 }
+$json_id = $row['chat_rooms'];
+$array_id = json_decode($json_id, true);
+
 if ($_GET['r'] == "") {
     $room = 0;
-    $room_name = "My Groupes";
+    $room_name = "My Rooms";
     $display = "style='display:none'";
 } else {
     $room = $_GET['r'];
+    if (!in_array($room, $array_id)) {
+        header("Location: https://edu-chat.me");
+    
+    }
     $display = "";
     if ($room == 1) {
         $display = "style='display:none'";
@@ -39,14 +48,14 @@ if ($_GET['r'] == "") {
 }
 
 echo "<script> var room = " . $room . ";</script>";
-include("menu.php");
 
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <?php include("header.html"); ?>
+    <?php include("header.html"); 
+    include("menu.php");?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <title><?php echo $room_name; ?></title>
 </head>
@@ -121,8 +130,8 @@ include("menu.php");
 
 <body>
     <div id="infoHead">
-        <span class="linksSettings"><a <?php echo $display ?> href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
-        <br><br>
+    <span class="linksSettings"><a <?php echo $display ?> href="rsettings.php?r=<?php echo $room ?>">Room Settings</a> | <a href="settings.php"><?php echo $row['username']; ?></a></span>
+            <br><br>
         <h1><?php echo $room_name; ?></h1><br>
     </div>
 

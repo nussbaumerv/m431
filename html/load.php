@@ -15,20 +15,21 @@ if ($amount != $total_entries) {
 
     if (mysqli_num_rows($result) > 0) {
         $counter = 0;
-        $q;
         while ($row = mysqli_fetch_assoc($result)) {
-
             $sender_id = $row['sender_id'];
+
+            $sql_name = "SELECT * FROM `users` WHERE id = '$sender_id'";
+            $result_name = mysqli_query($connect, $sql_name);
+            $row_name = mysqli_fetch_assoc($result_name);
+            $color = $row_name["color"];
+
             if ($sender_id == $uid) {
-                $sender = "Me";
+                $sender = "You";
             } else {
-                $sql_name = "SELECT username AS username FROM `users` WHERE id = '$sender_id'";
-                $result_name = mysqli_fetch_assoc(mysqli_query($connect, $sql_name));
-                $sender = $result_name["username"];
+                $sender = $row_name["username"];
             }
 
-
-            echo "<div class='messageContainer'>
+            echo "<div style='background-color: ".$color.";' class='messageContainer'>
             <t class='user'>" . $sender . "  <i>" . $row['time'] . " | " . $row['date'] . "</i></t><br>
             <t class='content'>" . $row["content"] . "</t><br>
             </div>";

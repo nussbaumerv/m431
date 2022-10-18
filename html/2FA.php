@@ -5,10 +5,11 @@ include("PHPMailer/mail.php");
 $codeSql = $row['2FA'];
 if($_GET['sc'] == 1){
     $to = $row['email'];
-    $subject = "Aktivierungs Code";
-    $message = "Ihr Aktivierungs Code: ".$codeSql." <br>
-    Geben Sie Ihren Code hier <a href='https://edu'chat.me/index.php'>hier</a> ein.";
+    $subject = "Activation Code";
+    $message = "Your Activation Code: <br><h2>".$codeSql."</h2> <br>
+    Enter your code <a href='https://edu'chat.me/index.php'>here</a>.";
     send_mail($to, $subject, $message);
+
     echo "<script>createAlert('Your Code was sent again to: ".$to.".'); </script>";
 }
 
@@ -40,7 +41,9 @@ if (isset($_POST['submit_code'])) {
 <body>
     <br><br>
     <h1>Edu Chat</h1>
+    <br>
     <p>Enter the Code you've received via email.</p>
+    <p>Also check your Spam folder.</p>
     <br>
     <form method="post">
         <input placeholder="Code" class="send_input" type="number" name="code"> <br>

@@ -45,7 +45,7 @@ if ($uid) {
     <div id="bottom_menu">
       <form method="get" action="createRoom.php">
         <input placeholder="Room Name" class="input_menu" type="text" name="r" required> <br>
-        <button class="button_menu" type="submit" onclick="save()">Create Groupe</button>
+        <button class="button_menu" type="submit" onclick="save();">Create Room</button>
       </form>
     </div>
   </div>

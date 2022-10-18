@@ -12,9 +12,9 @@ if (isset($_POST['submit_add'])) {
     if ($uid_add == "") {
         echo "<script>createAlert('User is not registred<br>A Invitation email was sent.'); </script>";
         $to = $email;
-        $subject = "Edu Chat Einladung";
-        $message = "Sie wurden von " . $username . " zur " . $room_name . " Gruppe auf Edu Chat eingeladen. <br>
-        Registrieren Sie sich Jetzt <a href='https://edu'chat.me/register.php'>hier</a>.";
+        $subject = "Edu Chat Invitation";
+        $message = "You have been invited from" . $username . " to the " . $room_name . " room on Edu Chat. <br>
+        Register now <a href='https://edu'chat.me/register.php'>here</a>.";
         send_mail($to, $subject, $message);
     } else {
         $json_id_add = $row_add['chat_rooms'];
@@ -36,9 +36,9 @@ if (isset($_POST['submit_add'])) {
             $result_update = mysqli_query($connect, $sql_update);
             if ($result_update) {
                 $to = $email;
-                $subject = "Neue Edu Chat Gruppe";
-                $message = "Hi " . $row_add['username'] . "<br>Sie wurden von " . $username . " zur " . $room_name . " Gruppe auf Edu Chat hinzugefuegt. <br>
-                Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und starten Sie jetzt mit dem chatten.";
+                $subject = "New Edu Chat Room";
+                $message = "Hi " . $row_add['username'] . "<br>You have been added by" . $username . " to the " . $room_name . " room on Edu Chat. <br>
+                Log in <a href='https://edu'chat.me/login.php'>here</a> and start chatting now.";
                 send_mail($to, $subject, $message);
                 echo "<script>createAlert('User was added to Room'); </script>";
             } else {
@@ -78,9 +78,9 @@ if (isset($_POST['submit_mod'])) {
             $result_update = mysqli_query($connect, $sql_update);
             if ($result_update) {
                 $to = $email;
-                $subject = "Mod in Edu Chat Gruppe";
-                $message = "Hi " . $row_add['username'] . "<br>Sie wurden von " . $username . " im " . $room_name . " zu einem Mod befoerdert. <br>
-                Loggen Sie sich <a href='https://edu'chat.me/login.php'>hier</a> ein und starten Sie jetzt mit dem chatten als Mod.";
+                $subject = "Mod in Edu Chat Room";
+                $message = "Hi " . $row_add['username'] . "<br>You have been promoted by" . $username . " as a mod in the " . $room_name . " room on Edu Chat. <br>
+                Log in <a href='https://edu'chat.me/login.php'>here</a> and start chatting as a mod now.";
                 send_mail($to, $subject, $message);
                 echo "<script>createAlert('Mod was added to Room'); </script>";
             } else {
@@ -173,7 +173,7 @@ if (isset($_POST['submit_leave'])) {
     <br>
 
     <form method="post">
-        <button id="leave" class="send_button" name="submit_leave" type="submit">Leave room</button>
+        <button id="leave" class="send_button" name="submit_leave" type="submit">Leave Room</button>
     </form>
 </body>
 

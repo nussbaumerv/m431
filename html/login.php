@@ -1,9 +1,8 @@
 <?php
-session_start();
 include("PHPMailer/mail.php");
 include("connect.php");
 
-if ($_SESSION['uid']) {
+if ($_COOKIE['uid']) {
     header("Location: index.php");
 }
 
@@ -37,18 +36,16 @@ if (isset($_POST['submit'])) {
             $ip = $_SERVER['REMOTE_ADDR'];
         }
         $to = $email;
-        $subject = "Neues Login";
-        $message = "Am " . $date . " um " . $time . " loggte sich ein User mit der IP Adresse " . $ip . " erfolgreich in Ihren Account ein. <br>
-        Fals Sie dies nicht waren ändern Sie bitte sofort Ihr Passwort in den <a href='https://edu'chat.me/settings.php'>einstellungen</a>.";
+        $subject = "New Login";
+        $message = "On " . $date . " at " . $time . " you sucsessfuly logged with the IP-Adress " . $ip . " into your account. <br>
+        If this wasn't you please change your password immediately in the <a href='https://edu'chat.me/settings.php'>settings</a>.";
         send_mail($to, $subject, $message);
         setcookie('token', $row['token'], time() + (86400 * 30), "/");
         setcookie('uid', $row['id'], time() + (86400 * 30), "/");
         
         header("Location: index.php");
     } else {
-        echo '<fc><br>Falsches Passwort</fc>
-    <script> document.getElementById("pw").value = "";
-    document.getElementById("pw").placeholder = "Falsches Passwort"; </script>';
+        echo '<fc><br>Wrong Password</fc>';
     }
 }
 
@@ -84,7 +81,7 @@ if (isset($_POST['submit'])) {
     <br>
     <br>
     <br>
-    <a class="send_button" href="register.php">Registrieren</a>
+    <a class="send_button" href="register.php">Register</a>
 
 </body>
 

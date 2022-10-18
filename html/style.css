@@ -189,8 +189,8 @@ i {
 
 #footer {
   color: black;
-  padding: 3vw;
-  width: 94vw;
+  padding: 3vw 0vw 3vw 0vw;
+  width: 100%;
   background-color: #e6e6e6;
 }
 
