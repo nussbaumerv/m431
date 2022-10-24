@@ -13,22 +13,22 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 
 ## Requirements
 
-# Planning requirements
+### Planning requirements
 - Timeplan
 - Define goals
 - Clear the tasks of us
-# Data requirements
+### Data requirements
 - E-Mail
 - Name
 - Username
 - encrypted password
-# Coding requirements
+### Coding requirements
 - Chat function
 - Webpage design
 - Login function
 - Register function
 - User-friendly
-# Documentation requirements
+### Documentation requirements
 - no writing mistakes
 - good formated
 - user friendly
