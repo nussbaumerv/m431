@@ -9,7 +9,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 ## List of references 
 - [w3schools](https://www.w3schools.com/js/js_ajax_intro.asp)
 - Gitlab
-- 
+- [Google](https://www.google.com/search?q=google&rlz=1C1CSMH_deCH1018CH1018&oq=google++&aqs=chrome..69i57j69i59j69i60l2j69i65l2j69i60j69i65.2466j0j4&sourceid=chrome&ie=UTF-8)
 
 
 
@@ -17,8 +17,6 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 
 
 
-### randnotize
-We are getting the most coding skills from w3schools and Youtube. Information about the data of the users are researched on different websites. The Gitlab is also helping us to go on in the project. We have many different documents for the individual topics where we express our thoughts. 
-https://www.w3schools.com/js/js_ajax_intro.asp
+
 
 
