@@ -15,7 +15,8 @@ We wrote the task list also in google tables with the help of the example in Git
 
 
 
-![image](https://user-images.githubusercontent.com/112397910/197521075-3027c40c-6367-481f-9033-912c9abb410c.png)
+![image](https://user-images.githubusercontent.com/112397910/197548755-86377ec0-a126-4058-8de8-20006aa8d128.PNG)
+
 
 
         
