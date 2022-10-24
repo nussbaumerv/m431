@@ -17,9 +17,8 @@ function send_mail($to, $subject, $message)
   $mail->Host       = "smtp.mail.me.com"; 
   $mail->SMTPAuth   = true;        
   $mail->SMTPSecure = "tls";             
-  $mail->Host       = "smtp.mail.me.com";     
-  $mail->Username   = 'vali7799@icloud.com';
-  $mail->Password   = 'ncsg-rzop-ardx-nhut';
+  $mail->Username   = //email;
+  $mail->Password   = //password;
   $mail->Port       = 587;
   $mail->setFrom('vali7799@icloud.com', 'Edu Chat');
   $mail->addAddress($to);
