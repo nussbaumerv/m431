@@ -1,8 +1,7 @@
 # edu-chat.me
 
-
-
-
+## Who are we?
+Our names are Ilija and Valentin and we are both doing our apprenticeship at Google. We wanted to do a useful project that can also use other students. We came up with the idea to program a website where students can chat together about the school or other things. Below you can see our documentation of our project
 
 
 # IPERKA
