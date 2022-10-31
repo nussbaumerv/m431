@@ -7,22 +7,32 @@ We wanted to do a project where coding is important and where we can learn from 
 We informed us a lot with the Google drive of Mr. Devlin. The documents in the drive folders helped us to go on in the project and to know how to do the IPERKA points. We did a lot of the documents like the tasklist or the work plan with the example of the drive folders. Things for coding have been researched a lot on the internet and on youtube. W3Schools helped Valentin when he had problems in coding. 
 
 
-# Requirements
+## Requirements
 
 ### Project requirements
 - Timeplan
 - Define goals
-- Clear the tasks of us
+- To-Do's
+- Workplan
+- Task list
 ### Data requirements
 - E-Mail: Must be unique
-- Name
-- Username
-- encrypted password
+- Username: Must be unique
+- Password: Must be encrypted and only stored on Server
 ### Minimum funcionality
 - Chat function
-- Webpage design
+- Mobile optimized Webpage design
 - Login function
 - Register function
+- Ability to add someone to room
+- Ability to leave a room
+- Secure Cookie integration with token
+### Extra functionality
+- 2FA after registration
+- Login and registration emails
+- Custom chat colors
+- Ability to promote someone as a mod
+- Desktop Notifications
 ### Documentation requirements
 - no major writing mistakes
 - good formatted
@@ -35,12 +45,3 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - [Webmin](https://www.digitalocean.com/community/tutorials/how-to-install-webmin-on-ubuntu-20-04-de)
 - [PHP](https://www.w3schools.com/php/default.asp)
 - [SSL](https://www.namecheap.com/support/knowledgebase/article.aspx/9702/33/installing-an-ssl-certificate-on-webmin/.)
-
-
-
-
-
-
-
-
-
