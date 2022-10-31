@@ -6,20 +6,20 @@ Our names are Ilija and Valentin and we are both doing our apprenticeship at Goo
 
 # IPERKA
 
-## (Information)
+## Information
 [Information document](https://github.com/nussbaumerv/m431/blob/main/Doku_I.md)
 
-## (Planning)
+## Planning
 [Planning document](https://github.com/nussbaumerv/m431/blob/main/Doku_P.md)
 
-## (Decisions)
+## Decisions
 [Decisions document](https://github.com/nussbaumerv/m431/blob/main/Doku_E.md)
 
-## (Realisation)
+## Realisation
 [Realisation document](https://github.com/nussbaumerv/m431/blob/main/Doku_R.md)
 
-## (Control)
+## Control
 [Control document](https://github.com/nussbaumerv/m431/blob/main/Doku_K.md)
 
-## (Assess)
+## Assess
 [Assess document](https://github.com/nussbaumerv/m431/blob/main/Doku_A.md)
