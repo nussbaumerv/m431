@@ -1,2 +1,0 @@
-Decide
-After a short discussion about splitting the work we have decided that Valentin will do the biggest part in the coding process. Ilija will show him sketches how the chat forum could look like. He will also help debugging and testing what Valentin coded. Ilija will write the documentation and exchange with Valentin the work he does to know what to write in the documentation. The goal is that we can exchange easily and to know what the other is working on.

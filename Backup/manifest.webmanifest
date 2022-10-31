@@ -1,9 +1,0 @@
-{
-    "name": "Valentin Nussbaumer",
-    "short_name": "VN",
-    "theme_color": "#ff0022",
-    "background_color": "#f9f9f9",
-    "display": "fullscreen",
-    "scope": "/",
-    "start_url": "/index.php"
-  }
