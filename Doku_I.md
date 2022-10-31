@@ -9,7 +9,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 
 # Requirements
 
-### Planning requirements
+### Project requirements
 - Timeplan
 - Define goals
 - Clear the tasks of us
@@ -18,7 +18,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - Name
 - Username
 - encrypted password
-### Coding requirements
+### Minimum funcionality
 - Chat function
 - Webpage design
 - Login function
