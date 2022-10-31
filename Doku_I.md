@@ -31,8 +31,12 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 
 ## List of references 
 - [w3schools](https://www.w3schools.com/js/js_ajax_intro.asp)
-- [Google](https://www.google.com/search?q=google&rlz=1C1CSMH_deCH1018CH1018&oq=google++&aqs=chrome..69i57j69i59j69i60l2j69i65l2j69i60j69i65.2466j0j4&sourceid=chrome&ie=UTF-8)
-- Gitlab
+- [Ajax](https://www.w3schools.com/xml/ajax_intro.asp)
+- [PHPMailer](https://www.cloudways.com/blog/send-emails-in-php-using-phpmailer/)
+- [Email MX](https://support.hostinger.com/en/articles/1583453-how-to-point-mx-records-for-emails-at-hostinger)
+- [Webmin](https://www.digitalocean.com/community/tutorials/how-to-install-webmin-on-ubuntu-20-04-de)
+- [PHP](https://www.w3schools.com/php/default.asp)
+
 
 
 
