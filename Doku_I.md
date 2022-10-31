@@ -35,6 +35,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - [Email MX](https://support.hostinger.com/en/articles/1583453-how-to-point-mx-records-for-emails-at-hostinger)
 - [Webmin](https://www.digitalocean.com/community/tutorials/how-to-install-webmin-on-ubuntu-20-04-de)
 - [PHP](https://www.w3schools.com/php/default.asp)
+- [SSL](https://www.namecheap.com/support/knowledgebase/article.aspx/9702/33/installing-an-ssl-certificate-on-webmin/.)
 
 
 
