@@ -1,10 +1,11 @@
 # edu-chat.me
 
+## Who are we?
+Our names are Ilija and Valentin and we are both 15 years old. We are doing our apprenticeship at Google and wanted to do our project together. 
+
 ## Project Description
 We wanted to do a useful project that can also be used by other students. We came up with the idea to program a website where students can chat together about the school or other things. You can create rooms and chat with your friends in a private chat room.
 
-## Who are we?
-Our names are Ilija and Valentin and we are both 15 years old. We are doing our apprenticeship at Google and wanted to do our project together. 
 
 # IPERKA
 
