@@ -23,7 +23,6 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - Webpage design
 - Login function
 - Register function
-- User-friendly
 ### Documentation requirements
 - no major writing mistakes
 - good formatted
