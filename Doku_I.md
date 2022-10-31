@@ -14,7 +14,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - Define goals
 - Clear the tasks of us
 ### Data requirements
-- E-Mail
+- E-Mail: Must be unique
 - Name
 - Username
 - encrypted password
