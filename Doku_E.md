@@ -9,4 +9,8 @@ Before writing the decisions in a decision matrix we discussed what our strength
 
 
 ## Decision log
-![decision matrix](https://user-images.githubusercontent.com/112397910/198028290-0a0f5237-222c-440a-927a-e0320f875c2d.PNG)
+![decision log](https://user-images.githubusercontent.com/112397910/198028290-0a0f5237-222c-440a-927a-e0320f875c2d.PNG)
+
+## Decision Matrix
+![decision matrix](https://user-images.githubusercontent.com/112397910/199042513-b2599b48-27d7-4f2f-9e63-92ee22e10409.png)
+
