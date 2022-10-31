@@ -8,5 +8,5 @@ Before writing the decisions in a decision matrix we discussed what our strength
 
 
 
-## Decision Matrix
+## Decision log
 ![decision matrix](https://user-images.githubusercontent.com/112397910/198028290-0a0f5237-222c-440a-927a-e0320f875c2d.PNG)
