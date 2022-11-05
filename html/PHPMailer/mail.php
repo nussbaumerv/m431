@@ -14,13 +14,13 @@ function send_mail($to, $subject, $message)
   $mail = new PHPMailer(true);
 
   $mail->IsSMTP();
-  $mail->Host       = "smtp.mail.me.com"; 
+  $mail->Host       = //host; 
   $mail->SMTPAuth   = true;        
-  $mail->SMTPSecure = "tls";             
+  $mail->SMTPSecure = "ssl";             
   $mail->Username   = //email;
   $mail->Password   = //password;
-  $mail->Port       = 587;
-  $mail->setFrom('vali7799@icloud.com', 'Edu Chat');
+  $mail->Port       = //port;
+  $mail->setFrom(/*email*/, 'Edu Chat');
   $mail->addAddress($to);
 
   $mail->isHTML(true);
