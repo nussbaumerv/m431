@@ -31,7 +31,7 @@ We informed us a lot with the Google drive of Mr. Devlin. The documents in the d
 - 2FA after registration
 - Login and registration emails
 - Custom chat colors
-- Ability to promote someone as a mod
+- Ability to promote someone as a moderator
 - Desktop Notifications
 ### Documentation requirements
 - no major writing mistakes
